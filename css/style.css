@@ -1,0 +1,317 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ______________Fonts styles_______________ */
+html {
+    font-size: 62.5%; /* this sets 1rem = 10px, this is convenient regarding to accessibility and easy to calculate */
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+p {
+    font-size: 1.6rem;
+    color: #607D8B;
+    line-height: 150%;
+}
+
+p strong {
+    font-weight: bold;
+    color: #263238;
+}
+
+p + p {
+    margin-top: 2rem;
+}
+
+h1 {
+    font-size: 4.8rem;
+    color: #263238;
+}
+
+h2 {
+    font-size: 2.4rem;
+    color: #263238;
+    line-height: 150%;
+}
+
+
+h2 + p {
+    margin-top: 2rem;
+}
+
+footer a {
+    font-size: 1.6rem;
+    color: #0479A8;
+}
+
+.button {
+    background-color: #C5050C;
+    border: none;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.6rem;
+    margin-bottom: 6.4rem;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* _________NAVIGATION BAR_____________*/
+
+
+header {
+    width: 100%;
+    background-color: #C5050C;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+nav {
+    width: 100%;
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 3.2rem; 
+}
+
+nav .logo {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.menu-btn i {
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+
+
+#click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+}
+
+#click:checked ~ ul {
+    left: 0;
+}
+
+#click:checked ~ ul li a {
+    margin-left: 0px;
+}
+
+.menu {
+    position: fixed;
+    top: 3rem;
+    left: -100%;
+    background: #C5050C;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+
+.menu li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 2rem;
+    transition: 0.6s easy(0.68, -0.55, 0.265, 1.55);
+    color: white;
+    font-weight: 500;
+    padding: 0.7rem 1.6rem;
+    letter-spacing: .1rem;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+
+
+.menu li {
+    width: 100%;
+    margin: 4rem 0;
+}
+
+.menu li a.active,
+.menu li a:hover {
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+
+/* _________FOOTER_____________*/
+
+footer {
+    border-top: 1px solid #CFD8DC;
+    padding-top: 3.2rem;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.4rem;
+    margin-right: 1.4rem;
+}
+
+.footer-set-options {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footer-option {
+    margin-top: 1.6rem;
+    display: flex;
+    flex-direction: row;
+    font-style: normal;
+}
+
+.footer-option a {
+    align-self: center;
+    text-decoration: none;
+}
+
+.footer-option a:hover {
+    align-self: center;
+    text-decoration: underline;
+}
+
+
+.footer-option-one {
+    font-weight: bold;
+}
+
+.footer-option-two {
+    font-weight: bold;
+}
+
+.footer-option-three {
+    font-style: italic;
+    font-size: 1.6rem;
+    color: #0479A8;
+}
+
+.footer-set-options :nth-child(3) {
+    margin-top: 2rem;
+}
+
+.footer-logos {
+    order: -1;
+    margin-bottom: 3.2rem;
+    max-width: 30rem;
+}
+
+.footer-logos img {
+    width: 100%;
+}
+
+/* ____________TABLET_______________________________________________________________ */
+
+@media (min-width: 800px) {
+
+    /* _________NAVIGATION BAR_____________*/
+    
+    nav {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .menu-btn i {
+        display: none;
+    }
+    
+    #click:not(:checked) ~ ul {
+        left: 0;
+    }
+    
+    #click:not(:checked) ~ ul li a {
+        margin-left: 0px;
+    }
+
+    .menu {
+        position: relative;
+        top: auto;
+        height: auto;
+        width: auto;
+        display: flex;
+        transition: none;    
+    }
+    
+    
+    .menu li a {
+        display: flex;
+        font-size: 1.6rem;
+    }
+    
+    
+    
+    .menu li {
+        width: auto;
+        margin: 0;
+    }
+    
+
+    /* _________FOOTER_____________*/
+
+    footer {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .footer-logos img {
+        width: 75%;
+    }
+
+}
+
+/* ____________DESKTOP_______________________________________________________________ */
+
+@media (min-width: 1080px) {
+
+    /* _________NAVIGATION BAR_____________*/
+    
+    nav {
+        max-width: 1080px;
+    }
+
+
+    
+    h1 {
+       width: 80.8rem;
+    }
+
+    
+
+    /* _________FOOTER_____________*/
+
+    footer {
+        flex-direction: row;
+        width: 1080px;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-between;
+    }
+
+    .footer-logos {
+        order: 0;
+    }
+
+}
